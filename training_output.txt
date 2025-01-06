@@ -1,0 +1,147 @@
+Testing parameters: {'batch_size': 16, 'epochs': 5, 'lr': 0.01}
+Epoch 1: Train Loss=1.4934, Train Acc=0.2500, Val Loss=1.4633, Val Acc=0.2842
+Epoch 2: Train Loss=1.4928, Train Acc=0.2509, Val Loss=1.4633, Val Acc=0.2842
+Epoch 3: Train Loss=1.4928, Train Acc=0.2509, Val Loss=1.4633, Val Acc=0.2842
+Epoch 4: Train Loss=1.4928, Train Acc=0.2509, Val Loss=1.4633, Val Acc=0.2842
+Epoch 5: Train Loss=1.4928, Train Acc=0.2509, Val Loss=1.4633, Val Acc=0.2842
+Confusion matrix:
+ [[  0   0 263   0]
+ [  0   0 275   0]
+ [  0   0 314   0]
+ [  0   0 253   0]]
+Accuracy: 0.2841628959276018
+F1 score: 0.11064129668780832
+Testing parameters: {'batch_size': 16, 'epochs': 5, 'lr': 0.001}
+Epoch 1: Train Loss=1.0796, Train Acc=0.7194, Val Loss=0.9652, Val Acc=0.8235
+Epoch 2: Train Loss=0.9500, Train Acc=0.8317, Val Loss=0.9243, Val Acc=0.8489
+Epoch 3: Train Loss=0.9243, Train Acc=0.8444, Val Loss=0.9112, Val Acc=0.8552
+Epoch 4: Train Loss=0.9117, Train Acc=0.8539, Val Loss=0.9024, Val Acc=0.8597
+Epoch 5: Train Loss=0.8996, Train Acc=0.8621, Val Loss=0.8966, Val Acc=0.8688
+Confusion matrix:
+ [[206  50   1   6]
+ [ 11 225  10  29]
+ [  0  12 297   5]
+ [  2  19   0 232]]
+Accuracy: 0.8687782805429864
+F1 score: 0.8670229772531517
+Testing parameters: {'batch_size': 16, 'epochs': 10, 'lr': 0.01}
+Epoch 1: Train Loss=1.5016, Train Acc=0.2407, Val Loss=1.4981, Val Acc=0.2489
+Epoch 2: Train Loss=1.5041, Train Acc=0.2396, Val Loss=1.4981, Val Acc=0.2489
+Epoch 3: Train Loss=1.5041, Train Acc=0.2396, Val Loss=1.4981, Val Acc=0.2489
+Epoch 4: Train Loss=1.5041, Train Acc=0.2396, Val Loss=1.4981, Val Acc=0.2489
+Epoch 5: Train Loss=1.5041, Train Acc=0.2396, Val Loss=1.4981, Val Acc=0.2489
+Epoch 6: Train Loss=1.5041, Train Acc=0.2396, Val Loss=1.4981, Val Acc=0.2489
+Epoch 7: Train Loss=1.5041, Train Acc=0.2396, Val Loss=1.4981, Val Acc=0.2489
+Epoch 8: Train Loss=1.5041, Train Acc=0.2396, Val Loss=1.4981, Val Acc=0.2489
+Epoch 9: Train Loss=1.5041, Train Acc=0.2396, Val Loss=1.4981, Val Acc=0.2489
+Epoch 10: Train Loss=1.5041, Train Acc=0.2396, Val Loss=1.4981, Val Acc=0.2489
+Confusion matrix:
+ [[  0 263   0   0]
+ [  0 275   0   0]
+ [  0 314   0   0]
+ [  0 253   0   0]]
+Accuracy: 0.248868778280543
+F1 score: 0.09963768115942029
+Testing parameters: {'batch_size': 16, 'epochs': 10, 'lr': 0.001}
+Epoch 1: Train Loss=1.0918, Train Acc=0.6947, Val Loss=0.9671, Val Acc=0.8299
+Epoch 2: Train Loss=0.9546, Train Acc=0.8238, Val Loss=0.9226, Val Acc=0.8633
+Epoch 3: Train Loss=0.9246, Train Acc=0.8440, Val Loss=0.9113, Val Acc=0.8543
+Epoch 4: Train Loss=0.9188, Train Acc=0.8419, Val Loss=0.9011, Val Acc=0.8670
+Epoch 5: Train Loss=0.8983, Train Acc=0.8653, Val Loss=0.8902, Val Acc=0.8697
+Epoch 6: Train Loss=0.8953, Train Acc=0.8598, Val Loss=0.8893, Val Acc=0.8670
+Epoch 7: Train Loss=0.8894, Train Acc=0.8698, Val Loss=0.8917, Val Acc=0.8579
+Epoch 8: Train Loss=0.8858, Train Acc=0.8668, Val Loss=0.8836, Val Acc=0.8742
+Epoch 9: Train Loss=0.8845, Train Acc=0.8712, Val Loss=0.8779, Val Acc=0.8751
+Epoch 10: Train Loss=0.8833, Train Acc=0.8748, Val Loss=0.8828, Val Acc=0.8661
+Confusion matrix:
+ [[228  25   2   8]
+ [ 34 180  18  43]
+ [  2   1 307   4]
+ [  1   8   2 242]]
+Accuracy: 0.8660633484162896
+F1 score: 0.8586828985019503
+Testing parameters: {'batch_size': 32, 'epochs': 5, 'lr': 0.01}
+Epoch 1: Train Loss=0.9646, Train Acc=0.7883, Val Loss=0.8931, Val Acc=0.8570
+Epoch 2: Train Loss=0.8935, Train Acc=0.8537, Val Loss=0.8865, Val Acc=0.8588
+Epoch 3: Train Loss=0.8812, Train Acc=0.8630, Val Loss=0.8722, Val Acc=0.8715
+Epoch 4: Train Loss=0.8755, Train Acc=0.8678, Val Loss=0.8604, Val Acc=0.8814
+Epoch 5: Train Loss=0.8762, Train Acc=0.8648, Val Loss=0.8868, Val Acc=0.8606
+Confusion matrix:
+ [[232  17   1  13]
+ [ 44 166  12  53]
+ [  4   1 306   3]
+ [  2   3   1 247]]
+Accuracy: 0.860633484162896
+F1 score: 0.8508700891561699
+Testing parameters: {'batch_size': 32, 'epochs': 5, 'lr': 0.001}
+Epoch 1: Train Loss=1.1041, Train Acc=0.7034, Val Loss=0.9798, Val Acc=0.8253
+Epoch 2: Train Loss=0.9614, Train Acc=0.8277, Val Loss=0.9378, Val Acc=0.8443
+Epoch 3: Train Loss=0.9285, Train Acc=0.8503, Val Loss=0.9228, Val Acc=0.8416
+Epoch 4: Train Loss=0.9115, Train Acc=0.8596, Val Loss=0.9064, Val Acc=0.8570
+Epoch 5: Train Loss=0.8987, Train Acc=0.8696, Val Loss=0.9014, Val Acc=0.8588
+Confusion matrix:
+ [[210  43   2   8]
+ [ 19 211  10  35]
+ [  0  13 293   8]
+ [  3  15   0 235]]
+Accuracy: 0.8588235294117647
+F1 score: 0.8561970936373304
+Testing parameters: {'batch_size': 32, 'epochs': 10, 'lr': 0.01}
+Epoch 1: Train Loss=1.0746, Train Acc=0.6626, Val Loss=1.0316, Val Acc=0.7113
+Epoch 2: Train Loss=1.0245, Train Acc=0.7149, Val Loss=1.0178, Val Acc=0.7240
+Epoch 3: Train Loss=1.0165, Train Acc=0.7249, Val Loss=1.0175, Val Acc=0.7249
+Epoch 4: Train Loss=1.0076, Train Acc=0.7328, Val Loss=1.0101, Val Acc=0.7321
+Epoch 5: Train Loss=1.0033, Train Acc=0.7396, Val Loss=1.0217, Val Acc=0.7204
+Epoch 6: Train Loss=1.0126, Train Acc=0.7267, Val Loss=1.0273, Val Acc=0.7104
+Epoch 7: Train Loss=1.0057, Train Acc=0.7337, Val Loss=1.0289, Val Acc=0.7149
+Epoch 8: Train Loss=1.0015, Train Acc=0.7396, Val Loss=1.0216, Val Acc=0.7204
+Epoch 9: Train Loss=1.0018, Train Acc=0.7391, Val Loss=1.0130, Val Acc=0.7285
+Epoch 10: Train Loss=1.0025, Train Acc=0.7382, Val Loss=1.0154, Val Acc=0.7267
+Confusion matrix:
+ [[243   0   2  18]
+ [110   0  32 133]
+ [  2   0 309   3]
+ [  2   0   0 251]]
+Accuracy: 0.7266968325791855
+F1 score: 0.6218570425697568
+Testing parameters: {'batch_size': 32, 'epochs': 10, 'lr': 0.001}
+Epoch 1: Train Loss=1.1272, Train Acc=0.6746, Val Loss=1.0145, Val Acc=0.7647
+Epoch 2: Train Loss=0.9693, Train Acc=0.8216, Val Loss=0.9431, Val Acc=0.8344
+Epoch 3: Train Loss=0.9368, Train Acc=0.8397, Val Loss=0.9185, Val Acc=0.8543
+Epoch 4: Train Loss=0.9155, Train Acc=0.8514, Val Loss=0.9117, Val Acc=0.8525
+Epoch 5: Train Loss=0.9057, Train Acc=0.8630, Val Loss=0.9003, Val Acc=0.8661
+Epoch 6: Train Loss=0.8969, Train Acc=0.8684, Val Loss=0.8946, Val Acc=0.8579
+Epoch 7: Train Loss=0.8914, Train Acc=0.8732, Val Loss=0.8899, Val Acc=0.8715
+Epoch 8: Train Loss=0.8830, Train Acc=0.8764, Val Loss=0.8858, Val Acc=0.8706
+Epoch 9: Train Loss=0.8786, Train Acc=0.8816, Val Loss=0.8817, Val Acc=0.8742
+Epoch 10: Train Loss=0.8782, Train Acc=0.8822, Val Loss=0.8783, Val Acc=0.8796
+Confusion matrix:
+ [[219  37   1   6]
+ [ 22 214  12  27]
+ [  1   6 303   4]
+ [  3  14   0 236]]
+Accuracy: 0.8796380090497737
+F1 score: 0.876332668309705
+Best Hyperparameters: {'batch_size': 32, 'epochs': 10, 'lr': 0.001}
+
+------------------------------------------------------------------------------------------
+
+Epoch 1: Train Loss=1.1009, Train Acc=0.7233, Val Loss=0.9778, Val Acc=0.8253
+Epoch 2: Train Loss=0.9599, Train Acc=0.8313, Val Loss=0.9360, Val Acc=0.8443
+Epoch 3: Train Loss=0.9280, Train Acc=0.8508, Val Loss=0.9209, Val Acc=0.8443
+Epoch 4: Train Loss=0.9086, Train Acc=0.8668, Val Loss=0.9053, Val Acc=0.8606
+Epoch 5: Train Loss=0.8976, Train Acc=0.8707, Val Loss=0.8994, Val Acc=0.8624
+Epoch 6: Train Loss=0.8915, Train Acc=0.8734, Val Loss=0.8964, Val Acc=0.8606
+Epoch 7: Train Loss=0.8849, Train Acc=0.8761, Val Loss=0.8916, Val Acc=0.8652
+Epoch 8: Train Loss=0.8825, Train Acc=0.8798, Val Loss=0.8868, Val Acc=0.8688
+Epoch 9: Train Loss=0.8725, Train Acc=0.8854, Val Loss=0.8801, Val Acc=0.8751
+Epoch 10: Train Loss=0.8741, Train Acc=0.8893, Val Loss=0.8776, Val Acc=0.8769
+Test evaluation:
+Confusion matrix:
+ [[233  56   0  10]
+ [ 31 189  55  27]
+ [  1   4 304   0]
+ [  1  10   0 284]]
+Accuracy: 0.8381742738589212
+F1 score: 0.8327082788255704
+(0.8381742738589212, 0.8327082788255704)
