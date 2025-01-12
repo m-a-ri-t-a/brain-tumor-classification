@@ -1,41 +1,99 @@
+from enum import Enum
 import torch
 import torch.nn as nn
-from torchvision.models import resnet18, ResNet18_Weights, vgg16, VGG16_Weights
+from torchvision.models import resnet50, ResNet50_Weights, densenet121, DenseNet121_Weights
 import torch.nn.functional as F
 
-class MRIResNetClassifier(nn.Module):
-    def __init__(self, num_classes, pretrained=False, train_resnet = False):
-        super(MRIResNetClassifier, self).__init__()
-        if not pretrained:
-            self.resnet = resnet18()
-        else:
-            self.resnet = resnet18(weights=ResNet18_Weights.IMAGENET1K_V1)
-            for param in self.resnet.parameters():
-                param.requires_grad = train_resnet
+RADIMAGENET_RESNET = "pretrained_weights/ResNet50.pt"
+RADIMAGENET_DENSENET = "pretrained_weights/DenseNet121.pt"
 
-        in_features = self.resnet.fc.in_features
-        self.resnet.fc = nn.Linear(in_features, num_classes)
+class Weights(Enum):
+    IMN = 'imagenet'
+    RIMN = 'radimagenet'
+
+class Classifier(nn.Module):
+    def __init__(self, in_features, num_classes, dropout):
+        super().__init__()
+        self.drop_out = nn.Dropout(p=dropout)
+        self.linear = nn.Linear(in_features, num_classes)
 
     def forward(self, x):
-        x = self.resnet(x)
+        x = x.view(x.size(0), -1)
+        x = self.drop_out(x)
+        x = self.linear(x)
+        return x
+    
+class ResnetBackbone(nn.Module):
+    def __init__(self, pretrained=False):
+        super().__init__()
+        if pretrained:
+            base_model = resnet50(weights=ResNet50_Weights.IMAGENET1K_V1)
+        else:
+            base_model = resnet50(pretrained=False)
+
+        encoder_layers = list(base_model.children())
+        self.backbone = nn.Sequential(*encoder_layers[:-1])  
+                 
+    def forward(self, x):
+        return self.backbone(x)
+    
+class MRIResNetClassifier(nn.Module):
+    def __init__(self, num_classes, dropout, weights: Weights, train_resnet=False):
+        super(MRIResNetClassifier, self).__init__()
+
+        if weights not in [Weights.IMN, Weights.RIMN]:
+            raise ValueError("Invalid weights, choose between imagenet and radimagenet.")  
+        
+        backbone = ResnetBackbone(pretrained=(weights==Weights.IMN))
+        if weights == Weights.RIMN:
+            backbone.load_state_dict(torch.load(RADIMAGENET_RESNET, weights_only=True))
+
+        if not train_resnet:
+            for param in backbone.parameters():
+                param.requires_grad = False
+            
+        classifier = Classifier(2048, num_classes, dropout)
+        self.seq = nn.Sequential(backbone, classifier)
+
+    def forward(self, x):
+        x = self.seq(x)
         x = F.softmax(x, dim=1)
         return x
 
 
-class MRI_VGG16_Classifier(nn.Module):
-    def __init__(self, num_classes, pretrained=False, train_vgg16=False):
-        super(MRI_VGG16_Classifier, self).__init__()
-        if not pretrained:
-            self.vgg16 = vgg16()
+class DenseNetBackbone(nn.Module):
+    def __init__(self, pretrained=False):
+        super().__init__()
+        if pretrained:
+            base_model = densenet121(weights=DenseNet121_Weights.IMAGENET1K_V1)
         else:
-            self.vgg16 = vgg16(weights=VGG16_Weights.IMAGENET1K_V1)
-            for param in self.vgg16.parameters():
-                param.requires_grad = train_vgg16
+            base_model = densenet121(pretrained=False)
+
+        encoder_layers = list(base_model.children())
+        self.backbone = nn.Sequential(*encoder_layers[:-1])  
+                 
+    def forward(self, x):
+        return self.backbone(x)
+    
+class DenseNetClassifier(nn.Module):
+    def __init__(self, num_classes, dropout, weights: Weights, train_densenet=False):
+        super(DenseNetClassifier, self).__init__()
+
+        if weights not in [Weights.IMN, Weights.RIMN]:
+            raise ValueError("Invalid weights, choose between imagenet and radimagenet.")  
         
-        in_features = self.vgg16.classifier[6].in_features
-        self.vgg16.classifier[6] = nn.Linear(in_features, num_classes)
+        backbone = DenseNetBackbone(pretrained=(weights==Weights.IMN))
+        if weights == Weights.RIMN:
+            backbone.load_state_dict(torch.load(RADIMAGENET_DENSENET, weights_only=True))
+
+        if not train_densenet:
+            for param in backbone.parameters():
+                param.requires_grad = False
+            
+        classifier = Classifier(1024*7*7, num_classes, dropout)
+        self.seq = nn.Sequential(backbone, classifier)
 
     def forward(self, x):
-        x = self.vgg16(x)
+        x = self.seq(x)
         x = F.softmax(x, dim=1)
         return x
