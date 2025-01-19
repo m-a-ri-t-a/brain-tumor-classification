@@ -1,7 +1,3 @@
 # brain-tumor-classification
 
-data original folder sadrzi originalne podatke, data su podaci sa obrisanim duplikatima, a cleaned croppani podaci.
-
-req.txt sadrzi potrebne python module te se moze iskoristiti za kreiranje venv za pokretanje programa
-
-Podatke nije potrebno ponovno procesirati, dovoljno je samo pokrenuti main biljeznicu.
+This repository contains the code and resources for a project focused on biomedical image analysis, specifically the classification of brain tumors from MRI images. The project leverages deep learning techniques and pretrained convolutional neural networks (CNNs) to achieve accurate and efficient classification.
