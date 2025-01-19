@@ -1,5 +1,5 @@
-# dio koda kopiran sa https://github.com/masoudnick/Brain-Tumor-MRI-Classification/blob/main/Preprocessing.py, link prilozen uz dataset na kaggle-u
-# dodan i kod priložen ovdje https://www.kaggle.com/datasets/masoudnickparvar/brain-tumor-mri-dataset/discussion/482896 kako bi se uklonili duplikati
+# part of code copied from: https://github.com/masoudnick/Brain-Tumor-MRI-Classification/blob/main/Preprocessing.py
+# part of code that removes duplicates copied from: https://www.kaggle.com/datasets/masoudnickparvar/brain-tumor-mri-dataset/discussion/482896 
 
 import cv2
 import os
